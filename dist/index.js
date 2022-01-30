@@ -8479,7 +8479,7 @@ const { context = {} } = github;
 const { pull_request } = context.payload;
 
 (async () => { 
-  await octokit.issues.createComment({
+  await octokit.rest.issues.createComment({
   owner: 'kyagi',
   repo: 'awesome-project',
   issue_number: pull_request.number,
