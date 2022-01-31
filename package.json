@@ -6,5 +6,9 @@
   },
   "scripts": {
     "build": "ncc build src/action.js -o dist"
+  },
+  "dependencies": {
+    "winston": "^3.5.0",
+    "yargs": "^17.3.1"
   }
 }
