@@ -15,3 +15,7 @@ jobs:
       - uses: ./
         with:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          owner: 'kyagi'
+          repo: 'awesome-project'
+          label: 'releasable'
+          quorum: '1'
