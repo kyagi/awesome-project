@@ -48,7 +48,7 @@ if (check == true) {
 main(owner, repo)
 
 async function main(owner, repo) {
-  core.setOutput("log", logger.log({ level: 'info', message: 'Shamshir started.', owner: owner, repo: repo, mode: mode }))
+  core.setOutput("log", 'Shamshir started.')
   logger.log({ level: 'info', message: 'Shamshir started.', owner: owner, repo: repo, mode: mode });
 
   try {
@@ -83,6 +83,7 @@ async function main(owner, repo) {
   } catch (error) {
     logger.log({ level: 'error', message: `${error}`, owner: owner, repo: repo, function: 'main', mode: mode });
   } finally {
+    core.setOutput("log", 'Shamshir finished.')
     logger.log({ level: 'info', message: 'Shamshir finished.', owner: owner, repo: repo, mode: mode });
   }
 }
