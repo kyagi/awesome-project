@@ -23983,7 +23983,6 @@ async function main(owner, repo) {
   } catch (error) {
     logger.log({ level: 'error', message: `${error}`, owner: owner, repo: repo, function: 'main', mode: mode });
   } finally {
-    core.setOutput("log", 'Shamshir finished.')
     logger.log({ level: 'info', message: 'Shamshir finished.', owner: owner, repo: repo, mode: mode });
   }
 }
