@@ -6,6 +6,18 @@ inputs:
   GITHUB_TOKEN:
     description: 'GitHub token'
     required: true
+  owner:
+    description: 'owner'
+    required: true
+  repo:
+    description: 'repo'
+    required: true
+  label:
+    description: 'label'
+    required: true
+  quorum:
+    description: 'quorum'
+    required: true
 
 outputs:
   log:
