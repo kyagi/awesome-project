@@ -15,9 +15,14 @@ const github = require('@actions/github')
 
 const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN')
 const octokit = github.getOctokit(GITHUB_TOKEN)
-
 const { context = {} } = github
 const { pull_request } = context.payload
+
+const owner = core.getInput('owner')
+const repo = core.getInput('repo')
+const label = core.getInput('label')
+const quorum = core.getInput('quorum')
+const check = false
 
 // (async () => {
 //   await octokit.rest.issues.createComment({
@@ -31,8 +36,9 @@ const { pull_request } = context.payload
 // const octokit = new Octokit({auth: process.env.shamshir_pat })
 
 const { logger } = require('./winston.js')
-const { argv } = require('./yargs.js')
-const { owner, repo, label, quorum, check } = argv
+// const { argv } = require('./yargs.js')
+// const { owner, repo, label, quorum, check } = argv
+
 
 let mode = "live"
 if (check == true) {
