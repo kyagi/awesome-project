@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v2
       - run: npm install
       - id: aaa
-        uses: kyagi/awesome-project
+        uses: kyagi/awesome-project@main
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           owner: ${{ github.repository_owner }}
