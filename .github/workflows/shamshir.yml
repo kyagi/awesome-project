@@ -11,7 +11,7 @@ jobs:
       - run: echo "🌙 Shamshir was automatically triggered by a ${{ github.event_name }} event."
       - uses: actions/checkout@v2
       - run: npm install
-      - uses: kyagi/shamshir
+      - uses: ./
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           owner: {{ github.repository_owner }}
