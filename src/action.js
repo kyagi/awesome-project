@@ -19,7 +19,7 @@ const { context = {} } = github
 const { pull_request } = context.payload
 
 const owner = core.getInput('owner')
-const repo = core.getInput('repo')
+const repo = core.getInput('repo').split('/')[1]
 const label = core.getInput('label')
 const quorum = core.getInput('quorum')
 const check = false

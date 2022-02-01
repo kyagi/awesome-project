@@ -1,21 +1,21 @@
 name: Shamshir
-
 on:
   pull_request_review:
     types: [submitted, edited, dismissed]
   pull_request:
     types: [edited, labeld, unlabeled]
-
 jobs:
-  shamshir:
+  Labeling-Agent:
     runs-on: ubuntu-latest
     steps:
+      - run: echo "🌙 Shamshir was automatically triggered by a ${{ github.event_name }} event."
       - uses: actions/checkout@v2
       - run: npm install
-      - uses: ./
+      - uses: kyagi/shamshir
         with:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          owner: 'kyagi'
-          repo: 'awesome-project'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          owner: {{ github.repository_owner }}
+          repo:  {{ github.repository }}
           label: 'releasable'
           quorum: '1'
+      - run: echo "🌙 Shamshir's status is ${{ job.status }}."
