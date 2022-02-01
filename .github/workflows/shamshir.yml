@@ -4,6 +4,11 @@ on:
     types: [submitted, edited, dismissed]
   pull_request:
     types: [edited, labeld, unlabeled]
+
+on:
+  schedule:
+    - cron: '0,30 0-10 * * 1-5'
+
 jobs:
   Labeling-Agent:
     runs-on: ubuntu-latest
