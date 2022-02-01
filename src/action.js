@@ -48,7 +48,7 @@ if (check == true) {
 main(owner, repo)
 
 async function main(owner, repo) {
-  core.setOutput("log", 'Shamshir started.')
+  core.setOutput('log', 'Shamshir started.')
   logger.log({ level: 'info', message: 'Shamshir started.', owner: owner, repo: repo, mode: mode });
 
   try {
