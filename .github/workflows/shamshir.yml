@@ -11,6 +11,7 @@ jobs:
       - run: echo "🌙 Shamshir was automatically triggered by a ${{ github.event_name }} event."
       - uses: actions/checkout@v2
       - run: npm install
+      - run: npm cache clean -f
       - id: aaa
         uses: kyagi/awesome-project@main
         with:
