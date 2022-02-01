@@ -1,5 +1,5 @@
-name: 'Thank You Action'
-description: 'Say "Thank You" to new pull requests'
+name: 'Shamshir'
+description: 'Labeling Agent'
 author: 'Kazuo Yagi'
 
 inputs:
