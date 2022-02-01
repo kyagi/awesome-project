@@ -11,7 +11,7 @@ jobs:
       - run: echo "🌙 Shamshir was automatically triggered by a ${{ github.event_name }} event."
       - uses: actions/checkout@v2
       - run: npm install
-      - id: 1
+      - id: aaa
         uses: ./
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -19,5 +19,5 @@ jobs:
           repo:  ${{ github.repository }}
           label: 'releasable'
           quorum: '1'
-      - run: echo "${{ steps.1.outputs.log }}"
+      - run: echo "${{ steps.aaa.outputs.log }}"
       - run: echo "🌙 Shamshir's status is ${{ job.status }}."
