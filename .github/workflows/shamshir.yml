@@ -16,7 +16,7 @@ jobs:
       - run: npm install
       - run: npm cache clean -f
       - id: aaa
-        uses: kyagi/awesome-project@main
+        uses: kyagi/shamshir@main
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           owner: ${{ github.repository_owner }}
