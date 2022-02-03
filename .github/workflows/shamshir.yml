@@ -8,7 +8,7 @@ on:
     - cron: '0,30 0-10 * * 1-5'
 
 jobs:
-  Labelling:
+  Labeling:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🌙  Shamshir was automatically triggered by a ${{ github.event_name }} event."
