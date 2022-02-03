@@ -1,27 +1,27 @@
 name: 'Shamshir'
-description: 'Labeling Agent'
-author: 'Kazuo Yagi'
+description: 'Labeling'
+author: 'Your name'
 
 inputs:
   GITHUB_TOKEN:
     description: 'GitHub token'
     required: true
   owner:
-    description: 'owner'
+    description: 'Github repository owner'
     required: true
   repo:
-    description: 'repo'
+    description: 'Github repository'
     required: true
   label:
-    description: 'label'
+    description: 'Github label'
     required: true
   quorum:
-    description: 'quorum'
+    description: 'The quorum of approval'
     required: true
 
 outputs:
   log:
-    description: 'log message will appear "Checks" tab on PR page'
+    description: 'shamshir-run log message for github actions'
 
 runs:
   using: 'node16'

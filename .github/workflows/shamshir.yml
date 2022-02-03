@@ -8,7 +8,7 @@ on:
     - cron: '0,30 0-10 * * 1-5'
 
 jobs:
-  Labeling-Agent:
+  Labelling:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🌙  Shamshir was automatically triggered by a ${{ github.event_name }} event."
@@ -16,7 +16,7 @@ jobs:
       - run: npm install
       - run: npm cache clean -f
       - id: aaa
-        uses: kyagi/shamshir@main
+        uses: kyagi/shamshir@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           owner: ${{ github.repository_owner }}
