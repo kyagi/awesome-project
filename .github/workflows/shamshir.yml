@@ -24,7 +24,6 @@ jobs:
           quorum: '1'
       - run: echo "${{ steps.aaa.outputs.log }}"
       - run: echo "🌙  Shamshir's status is ${{ job.status }}."
-    steps:
       - run: echo "🌙  Shamshir was automatically triggered by a ${{ github.event_name }} event."
       - uses: actions/checkout@v2
       - run: npm install
