@@ -1,4 +1,4 @@
-name: Shamshir
+name: ShamshirLabeling
 on:
   pull_request_review:
     types: [submitted, edited, dismissed]
@@ -14,7 +14,6 @@ jobs:
       - run: echo "🌙  Shamshir was automatically triggered by a ${{ github.event_name }} event."
       - uses: actions/checkout@v2
       - run: npm install
-      - run: npm cache clean -f
       - id: aaa
         uses: kyagi/shamshir@v1
         with:
@@ -24,4 +23,18 @@ jobs:
           label: 'releasable'
           quorum: '1'
       - run: echo "${{ steps.aaa.outputs.log }}"
+      - run: echo "🌙  Shamshir's status is ${{ job.status }}."
+    steps:
+      - run: echo "🌙  Shamshir was automatically triggered by a ${{ github.event_name }} event."
+      - uses: actions/checkout@v2
+      - run: npm install
+      - id: bbb
+        uses: kyagi/shamshir@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          owner: ${{ github.repository_owner }}
+          repo:  ${{ github.repository }}
+          label: 'shamshir'
+          quorum: '1'
+      - run: echo "${{ steps.bbb.outputs.log }}"
       - run: echo "🌙  Shamshir's status is ${{ job.status }}."
